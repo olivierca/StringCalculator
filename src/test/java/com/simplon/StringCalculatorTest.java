@@ -68,5 +68,52 @@ public class StringCalculatorTest
             //assert
             assertEquals(6,result);
         }
+
+/*
+
+17.Créer le test pour que La méthode add puisse gérer le retour à la ligne "\n"
+   Exemple : add("1\n2,3")=6
+   ATTENTION : l'entrée suivante n’est PAS autorisée: "1,\n"
+
+ */
+
+
+    @Test
+    public void addTest_with_three_Number_and_new_separator_Ok()
+    {
+        // set
+        String x="1\n2,3";
+        StringCalculator calculator = new StringCalculator();
+        // test
+        int result = calculator.add(x);
+        //assert
+        assertEquals(6,result);
+    }
+
+
+
+    @Test
+    public void addTest_with_three_Number_and_new_separator_Ko()
+    {
+        // set
+        String x="1,\n";
+        StringCalculator calculator = new StringCalculator();
+        // test
+        int result = calculator.add(x);
+        //assert
+        assertEquals(0,result);
+    }
+    @Test
+    public void addTest_with_Other_separator()
+    {
+        // set
+        String x="[;]1;2";
+        StringCalculator calculator = new StringCalculator();
+        // test
+        int result = calculator.add(x);
+        //assert
+        assertEquals(3,result);
+    }
+
 }
 
