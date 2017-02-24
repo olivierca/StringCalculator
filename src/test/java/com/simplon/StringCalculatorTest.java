@@ -57,4 +57,16 @@ public class StringCalculatorTest
         assertEquals(3,result);
 
     }
+    @Test
+    public void addTest_with_three_Number()
+        {
+            // set
+          String x="1,2,3";
+          StringCalculator calculator = new StringCalculator();
+          // test
+            int result = calculator.add(x);
+            //assert
+            assertEquals(6,result);
+        }
 }
+
